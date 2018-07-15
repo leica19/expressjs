@@ -1,6 +1,7 @@
 
 FROM leica19/node-ubuntu
-
-RUN mkdir /code
-WORKDIR /code
-
+WORKDIR /root/hoge
+RUN npm i express --save
+RUN npm i pug --save
+RUN npm install mongoose --save
+ADD . /root/hoge/

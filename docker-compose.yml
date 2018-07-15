@@ -1,0 +1,23 @@
+
+version: "2"
+services:
+  app:
+    depends_on:
+      - mongo
+    container_name: app
+    build: .
+    command: node app.js
+    volumes:
+      - ./:/root/hoge/
+    restart: always
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./db:/root/hoge/db
+    ports:
+      - "27017:27017"
