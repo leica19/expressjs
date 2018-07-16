@@ -2,7 +2,9 @@
 version: "2"
 services:
   app:
-    container_name: app
+    container_name: "app"
+    depends_on:
+    - mongo
     build: .
     volumes:
       - ./:/root/hoge/
@@ -12,11 +14,9 @@ services:
     links:
       - mongo
     command: node app.js
-    depends_on:
-      - mongo
   mongo:
-    container_name: mongo
     image: mongo
+    container_name: "mongo"
     volumes:
       - ./db:/root/hoge/db
     ports:
