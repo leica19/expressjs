@@ -13,7 +13,7 @@ mongoose.connect('mongodb://mongo:27017/chatapp', function(err){
   if(err) {
     console.log(err);
   } else {
-    console.log("#############...connected to MongoDB.");
+    console.log("##connected to MongoDB##");
   }
 });
 
@@ -29,7 +29,6 @@ app.get("/update", function(req, res, next){
 });
 
 app.post("/update", function(req, res, next) {
-
   var newMessage = new Message({
     username: req.body.username,
     message: req.body.message
