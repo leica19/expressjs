@@ -1,8 +1,11 @@
 
+"use strict";
+
 // modules
 var http = require('http');
 var express = require('express');
 var path = require('path');
+var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 
 var Message = require('./schema/Message');
